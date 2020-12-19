@@ -1,13 +1,19 @@
 server:
   port: 8888
+encrypt:
+  key: keyName
 spring:
+  application:
+    name: configserver
   cloud:
     config:
       server:
         git:
           uri: https://github.com/tanya-marfel/yoke-service-config
+          force-pull: true
           repos:
             yoke-notify:
+              force-pull: true
               uri: https://github.com/tanya-marfel/yoke-notify-config
             yoke-event:
               uri: https://github.com/tanya-marfel/yoke-event-config
